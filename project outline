@@ -1,0 +1,83 @@
+Dear students,
+In this module you learned the basics of programming and internalized core principles using the Python programming language.
+During this module you learned the following topics:
+Pseudo Code
+
+
+Introduction to computational (programming) thinking
+
+
+Introduction to programming
+
+
+Variables and data structures
+
+
+Using conditions
+
+
+Using loops
+
+
+Using functions
+
+
+Using advanced libraries such as Socket, OS, Requests, Scapy, and more
+
+
+This knowledge will be essential for you later in the course, as you will be required to identify and understand how code works in order to demonstrate your knowledge to your instructor.
+The submission deadline is two weeks from the date of receipt.
+ You are required to submit one exercise only, of your choice.
+ There are five exercises in total, presented to you.
+Please note:
+The solution must be written according to the required behavior.
+
+
+You must follow this instruction sheet (unless your instructor instructs otherwise).
+
+
+This project includes, as part of its completion, internet research on additional material, so that you can practice your online research skills.
+
+
+The project is submitted in groups, and in addition to the code, you are required to explain each line of the code.
+
+
+The purpose of this assignment is for you to understand what you are doing and not just copy code. Although most of the challenges can be almost fully solved using information from the internet, you must demonstrate understanding.
+
+
+You must also provide a general explanation of the process.
+
+
+Project submission must be in a Word file, which includes:
+Explanations of the code
+
+
+The participants
+
+
+A general explanation of the programming process
+
+
+The code itself
+
+
+Good luck,
+ Ecom
+
+Build a website‑scanning tool
+The tool performs the following actions:
+a. Connects to a website and displays it.
+b. Checks the directory paths that exist on the website.
+c. Extracts all links appearing on the site.
+d. If interesting files are found (e.g., PDF or images), the code downloads them automatically.
+Recommended libraries:
+Requests
+BeautifulSoup (BS4)
+Python Module Final Assignment
+
+Submission deadline: by 7.2.26 at 23:59
+Where to submit: 
+What to submit: a Python file (.py)
+Please note that the assignment is to be done in pairs. You must divide into pairs. If there is any problem, contact me. Each pair chooses only one exercise out of the five.
+Most importantly, enjoy the project and the learning process.
+Have a pleasant vacation and good luck.
