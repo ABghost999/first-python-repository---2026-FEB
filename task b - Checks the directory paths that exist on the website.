@@ -1,0 +1,12 @@
+ this is objective - b
+    # creating a directory and common list
+    directory_list=['admin', 'login', 'uploads', 'assets', 'images', 'db', 'test', 'database', 'files']
+    print("scanning directory paths....")
+    for path in directory_list:
+        full_path = f"{target_url}/{path}" #making sure to add '/' so the loop will run properly
+        path_check = requests.get(full_path)
+
+        if path_check.ok:
+            print(f"found access point in :{path}")
+        else:
+            print(f"no access found in :{path}")
