@@ -1,0 +1,11 @@
+import os
+import requests
+from bs4 import BeautifulSoup
+#import
+
+# this is objective - a
+target_url= "" #defined a target
+get_info = requests.get(target_url) # connection
+connection_success = get_info.ok
+server_response = get_info.reason # ok == 200
+print(f'target {target_url} | connection {server_response}') #print status
