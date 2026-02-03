@@ -1,0 +1,79 @@
+# ==========================================
+# Ecom School - Python Module Final Project
+# Tool: Website-Scanning & File Downloader
+# Participants: ephraim & aaron
+# Date: February 2026
+# ==========================================
+
+import os
+import requests
+from bs4 import BeautifulSoup
+#import relevant 
+
+# this is objective - a
+target_url= "" #defined a target
+get_info = requests.get(target_url) # connection
+connection_success = get_info.ok
+server_response = get_info.reason # ok == 200
+
+print(f'Target {target_url} | Connection {server_response}') #print status
+
+def ephraim_aaron():
+
+    # this is objective - b
+    # creating a directory and common list
+    directory_list=['admin', 'login', 'uploads', 'assets', 'images', 'db', 'test', 'database', 'files']
+    print("Scanning directory paths....")
+    for path in directory_list:
+        full_path = f"{target_url}/{path}" #making sure to add '/' so the loop will run properly
+        path_check = requests.get(full_path)
+
+        if path_check.ok:
+            print(f"[+] Found access point in :{path}")
+        else:
+            print(f"[-] No access found in :{path}")
+
+    #this is objective c
+
+    if connection_success:
+        print("\nExtracting relevant links...")
+        soup1 = BeautifulSoup(get_info.content,'html.parser')
+        # links = soup1.find_all(['a', 'img']) # this will find all the links
+
+        if not os.path.exists("downloads"):
+            os.makedirs("downloads")
+
+    interesting_files = ['.pdf', '.jpg', '.png', '.zip']
+
+    for link in soup1.find_all('a'):
+        href = link.get('href')
+        if href:
+            if href.startswith('/'): #this separates the links
+                    full_link = target_url + href
+            elif not href.startswith('http'):
+                    full_link = target_url + '/' + href
+            else:
+                full_link = href
+
+                print(f"found link {full_link}")
+
+
+            for file in interesting_files:
+                if file in full_link.lower():
+                    print(f"Interesting file found: {full_link}")
+
+                    try:
+                        file_name = full_link.split('/')[-1] #[-1] we learnt this is lesson strings and data as well as split
+                        file_data = requests.get(full_link).content
+                        with open(f"downloads/{file_name}","wb") as target_file: #wb = create binary
+                                    target_file.write(file_data)
+                                    print(f"File downloaded successfully: {file_name}")
+                    except:
+                        print(f"Not succesful: {file_name}")
+
+
+                    break
+
+# we hate indentations alot
+ephraim_aaron()
+print("\nThanks for coming hopefully you enjoyed - Aaron & Ephraim ")
